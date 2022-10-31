@@ -24,10 +24,24 @@ const app = Vue.createApp({
     },
 
     // TODO: Add completed values
-
+    computed: 
+    {
+        bookingCabinDisplay()
+        {
+            const cabin = this.product.cabins[this.booking.cabinIndex];
+            return `${cabin.name}: $ ${cabin.price.toLocaleString('en-US')}`
+        }
+    },
 
 
     // TODO: Add methods
+    methods: 
+    {
+        bookCabin() 
+        {
+            this.booking.completed = true;
+        }
+    }
 
 
 
